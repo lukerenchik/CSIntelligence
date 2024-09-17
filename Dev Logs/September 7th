@@ -1,0 +1,19 @@
+BIG OBJECTIVES TO SOLVE:
+
+CORS Communication Issues (Frontend<->Backend)
+
+SQLAlchemy Initialization & Setup
+
+------------------------------------------------
+
+Match Loader setup & working! Database now is loaded with all of the matches!!!
+
+(Guster - Ganging up on the Sun) is an incredible album, it is making debugging a big time vibe.
+
+------------------------------------------------
+
+Successes : Match loader is working and should be adaptable to any database schema.
+
+Challenges : Need to understand a database toolchain and implement effectively, SQLAlchemy is causing more issues
+than it is fixing, now I am considering using MongoDB or some other online noSQL database to house my information.
+

@@ -1,0 +1,43 @@
+Main Objectives:
+
+    Update Website every time a winner is selected
+
+    Backend Functions for tracking correct/incorrect answers and what bundles have already been seen
+
+        - Backend functions are implemented but cannot be tested due to lingering error related to displaying and fetching
+          match data.
+
+
+At this point instead of continuing to add more code, I think it will be valuable to perform a great refactoring effort
+to increase code robustness, reduce clutter, and to generally create a better foundation for the program.
+
+Tables:
+
+MatchData:
+5 Thousand Matches Ready to be Served with the following features
+
+features = [
+    'match_matchId', 'player_teamId', 'player_teamPosition',
+    'player_lane', 'player_champName', 'player_banPickTurn',
+    'player_champName_ban', 'player_win'
+]
+
+Users:
+All registered Users
+
+features = ['user_id', 'password', 'correct_answers' (int) , 'incorrect_answers' (int) , 'matches_seen' (a list of match_matchId)
+
+MatchLoader has been updated to be a more generic dataloader for the MatchGuesser, the class can be initialized with
+a filepath to a dataset of matches which will then be added to the matches table of the database.
+
+I need to seperate the many different pages from the index html file and create a seperate css standard for the website.
+
+Login Page
+Registration Page
+Match Guesser Page
+
+
+Files that still need updates:
+
+HTML Files
+

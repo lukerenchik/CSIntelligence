@@ -1,0 +1,18 @@
+After I got home from work yesterday I introduced a lot of bugs into the program by hastily implementing a user login and registration page.
+
+The main objectives for today will be working out the bugs for those, which I already know of a few:
+
+    - Login unauthorized bug (secret key / cookies) related
+    - Match bundle refresh bug, (needs to be unique every time)
+    - Instant Logout on page refresh
+
+It will also be important to get a handle for how the database I will be using works, and decide if SQLite is an appropriate solution or if a more robust option will be beneficial.
+
+Have spent a majority of this morning debugging a login issue with the password hash verification, solved now.
+
+Main Tasks:
+
+    Matches are being displayed again, but still with the bug that is causing it not to update every time a winner is selected
+
+    Correct and Incorrect counters are not being saved between sessions. (Functions must be created on backend to store in database)
+

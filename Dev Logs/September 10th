@@ -1,0 +1,2 @@
+Setup postgresql database with matches and user table. Loaded match data into DB. Need to create joined table to track
+the matches that each individual has seen. Need to write fetch match query.

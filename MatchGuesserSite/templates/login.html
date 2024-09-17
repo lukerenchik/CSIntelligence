@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Champion Select Intelligence</title>
+    <!-- Include styles.css -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar with logo and links -->
+<div class="navbar">
+    <div class="navbar-content">
+        <div class="logo">
+            <a href="/">Champion Select Intelligence</a>
+        </div>
+        <div class="nav-links">
+            <a href="/matchguesser">Match Guesser</a>
+            <a href="/leaderboard">Leaderboard</a>
+        </div>
+    </div>
+</div>
+
+<!-- Login Form Centered on the Page -->
+<div class="container">
+    <form id="loginForm" action="/login" method="post">
+        <h2>Login</h2>
+
+        <div class="message error" id="error-message" style="display: none;"></div>
+
+        <label for="name">Username</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your username">
+
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" required placeholder="Enter your password">
+
+        <input type="submit" value="Login">
+
+        <div class="footer">
+            <p>Don't have an account? <a href="/register">Register here</a>.</p>
+        </div>
+    </form>
+</div>
+
+<!-- JavaScript -->
+<script>
+    const form = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const formData = {
+            name: document.getElementById('name').value,
+            pass: document.getElementById('pass').value
+        };
+
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                // Redirect the user to the matchguesser page after login
+                window.location.href = "/matchguesser";
+            } else {
+                errorMessage.textContent = result.error;
+                errorMessage.style.display = 'block';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            errorMessage.textContent = 'Failed to log in.';
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>

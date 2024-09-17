@@ -1,0 +1,16 @@
+Big Win Today!!!
+
+Champions are being displayed in the HTML, I have linked the Champion portraits to the naming so those are displayed
+on the website as well. There is no longer a bug with not refreshing properly after selecting a winner.
+
+Demo: https://youtu.be/HmnYJZtafgw
+
+Next Steps: Implement a user system with registration & login, then create a leaderboard to track those with the
+best ratio of correct guesses.
+
+User Registration Sucessful!!! Woohoo! Another triumph today! Important lesson is to remember that database permissions
+are always a first place to look when running into errors with posting, accessing, and working with new parts of
+the database schema.
+
+For anyone that actually reads this (most likely nobody), I got a date this Saturday! Woo!
+

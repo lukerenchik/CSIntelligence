@@ -1,0 +1,15 @@
+After my first tests with neural networks I am a little dissapointed, I am able to close in on a 53.5% accuracy
+on which team has won the match. Not much better than random. I was hoping for a number closer to 60%, as that
+would indicate the model has a truly significant advantage against human actors. Some initial thoughts about how to
+boost performance are:
+
+- increased number of matches analyzed (currently 16,000), maybe shoot for 50,000?
+- add champion winrates, and other supplementary statistics to the model
+- add champion roles, classes, difficulties, damage types, and other champion specific parameters to the model
+
+Now that I have written these out, all three seem like good additions, but the third one specifically sounds like it
+could give a lot of juice to the model as it is able to begin asking questions like "Are they all physical, magic, or
+mixed damage?".
+
+The entire LoLMatchPredictor file needs to be cleaned up, big time. In the middle of getting champion attributes to
+be utilized within the model, I think once the file is cleaned up the bugs will naturally work themselves out.

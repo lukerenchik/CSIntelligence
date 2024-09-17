@@ -1,0 +1,211 @@
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #23272a 0%, #2c2f33 100%);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #F8F8FF; /* Ghost White */
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    margin-left: 20px;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #333; /* Dark text for contrast */
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.navbar .nav-links a {
+    color: #333; /* Dark text for contrast */
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* Forms */
+form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    max-width: 400px;
+    margin: 150px auto;
+}
+
+form h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Adjusted label and input alignment */
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 60%; /* Keep the reduced width */
+    padding: 12px;
+    margin-bottom: 20px; /* Default spacing between input fields */
+    border: none;
+    border-radius: 5px;
+    background: #2c2f33;
+    color: #ffffff;
+    text-align: center; /* Center the text within the input box */
+    margin: 0 auto; /* Center the input box within the form */
+    display: block;
+}
+
+/* Add vertical spacing after the Username field */
+#name {
+    margin-bottom: 20px; /* Increased from 20px to 40px */
+}
+
+form input[type="text"]::placeholder,
+form input[type="password"]::placeholder,
+form input[type="email"]::placeholder {
+    color: #aaaaaa;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(114, 137, 218, 0.5);
+}
+
+/* Buttons */
+input[type="submit"],
+button {
+    background: #7289da;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px #5b6eae;
+    transition: all 0.3s ease;
+    width: 60%; /* Match the width of the input boxes */
+    margin: 10px auto 0 auto; /* Center the button */
+    display: block;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: #99aaff;
+}
+
+input[type="submit"]:active,
+button:active {
+    box-shadow: 0 2px #5b6eae;
+    transform: translateY(3px);
+}
+
+/* Footer in Form */
+form .footer {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+form .footer a {
+    color: #7289da;
+    text-decoration: none;
+}
+
+form .footer a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message */
+.message.error {
+    background: #f44336;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .navbar-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .logo {
+        margin-left: 20px;
+    }
+
+    .navbar .nav-links {
+        margin-top: 10px;
+        gap: 10px;
+        margin-right: 20px;
+    }
+
+    form {
+        margin: 100px 20px;
+        padding: 30px 20px;
+    }
+
+    /* Adjust inputs and buttons to full width on mobile */
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    input[type="submit"],
+    button {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    /* Adjust spacing for the username field on mobile */
+    #name {
+        margin-bottom: 40px;
+    }
+}

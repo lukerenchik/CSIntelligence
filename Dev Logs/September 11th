@@ -1,0 +1,10 @@
+Fixed databases to have correct data types
+
+Updated Matchloader class
+
+MatchFetcher successfully returned random matches from the database.
+
+I am getting the data to the website in a package, I can see it in the console, I can't get it to display in the HTML.
+
+I think I need to deep dive into HTML to understand why this is happening.
+

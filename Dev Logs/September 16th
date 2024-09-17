@@ -1,0 +1,32 @@
+Major ground has been broken on this project and now it is pertinent to take a step back and think about the best course
+of a action to pursue moving forward. I see three major braches that I could delve into next, I will outline them
+here to organize my thought and structure my deliberations.
+
+1.) The database folder has many different py files all containing a single or small number of functions that are utilized
+by the API, it would make sense to condense these into a single file or class that is designed to directly deal with
+the API, for a better design paradigm.
+
+2.) Host the website on pythonanywhere and begin allowing users to guess & compete for who is the best champion select
+guesser / analyzer. But as I write this I think it would be fun to have some AI models already populated on the leaderboard
+before sending it out to friends so that I can compare its performance, and give the individuals some goalposts on where
+the bar is. This may even give me an early barometer on how effective the reinforcement learning model may be.
+
+3.) Begin building the classification model for champion select that will be trained on match data and guess which
+team is victorious.
+
+Honestly writing these three out I think it makes the most sense to work on number three. Two relies on three and
+one would be moving backwards. The site works, this can be revisited when it is ready for launch, and if it still
+gives me the code-smells, I will modify.
+
+So it appears I am learning something about the true nature of classification models, there currently isn't a paradigm
+where data that will not be available at evaluation time can be used during training. Naturally I thought that if
+the model could be shown a characters relative performance in a match they win / lose the model could better understand
+how that character fit inside of the individual gamestate, i.e. when Lissandra/Malphite plays against leblanc Leblanc averages
+-3.5 kills per game and +1.5 deaths per game, thus invalidating the principal of her success condition that she must
+remain a slippery assassin that frequently kills/pokes backline and avoids deaths. But it appears the models instead
+are creating a series of flags or other checks like (Does Leblanc have > 10 kills) && (Lissandra in Game) = Win, and
+when that performance data is missing the models are no longer able to make intelligent evaluations.
+
+I think this is a very big miss on the potential of these models to model human thought, but I am not ready to dive into
+how this particular problem may be solved, as I would like to see the performance of the traditional classification
+method first.

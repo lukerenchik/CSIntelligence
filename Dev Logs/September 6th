@@ -1,0 +1,23 @@
+Main Objective:
+
+Seperate & Update HTML Code
+
+Code is seperated and updated to utilize SQLAlchemy client, but I am now running into a Network Error when attempting to
+post registration to the database.
+
+TODO: Eventually add a template engine, css styling, etc, to streamline html and make the website look good.
+
+Well tough day...
+I suppose these happen, developing is a challenging endeavour, and I am branching into a new space (web dev) from the
+comfort of mathematics and algorithms.
+
+I have tested and verified that I have a CORS issue with my browser that is causing my registrations to not post,
+after numerous attempted fixes I let that problem sit and attempted to access the api's through CURL. This came with
+its own set of challenges as the SQLAlchemy instance I am using is not being initialized properly (or something of
+that nature) I spent limited resources attempting to solve this problem so it will be where I start tomorrow.
+
+BIG OBJECTIVES TO SOLVE:
+
+CORS Communication Issues (Frontend<->Backend)
+
+SQLAlchemy Initialization & Setup

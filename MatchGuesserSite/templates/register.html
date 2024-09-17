@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Champion Select Intelligence</title>
+    <!-- Include styles.css -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar with logo and links -->
+<div class="navbar">
+    <div class="navbar-content">
+        <div class="logo">
+            <a href="/">Champion Select Intelligence</a>
+        </div>
+        <div class="nav-links">
+            <a href="/login">Login</a>
+            <a href="/leaderboard">Leaderboard</a>
+        </div>
+    </div>
+</div>
+
+<!-- Registration Form Centered on the Page -->
+<div class="container">
+    <form id="registerForm" action="/register" method="post">
+        <h2>Register</h2>
+
+        <div class="message error" id="error-message" style="display: none;"></div>
+
+        <label for="name">Username</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your username">
+
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" required placeholder="Enter your password">
+
+        <input type="submit" value="Register">
+
+        <div class="footer">
+            <p>Already have an account? <a href="/login">Login here</a>.</p>
+        </div>
+    </form>
+</div>
+
+<!-- JavaScript -->
+<script>
+    const form = document.getElementById('registerForm');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const formData = {
+            name: document.getElementById('name').value,
+            pass: document.getElementById('pass').value
+        };
+
+        try {
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                // Redirect to login after successful registration
+                window.location.href = "/login";
+            } else {
+                errorMessage.textContent = result.error;
+                errorMessage.style.display = 'block';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            errorMessage.textContent = 'Failed to register.';
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
